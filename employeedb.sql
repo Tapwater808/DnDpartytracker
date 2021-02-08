@@ -1,47 +1,47 @@
-DROP DATABASE IF EXISTS employees_db;
-CREATE DATABASE employees_db;
+DROP DATABASE IF EXISTS dungeonparty_db;
+CREATE DATABASE dungeonparty_db;
 
-USE employees_db;
+USE dungeonparty_db;
 
-CREATE TABLE department (
+CREATE TABLE main_stat (
   id INT NOT NULL AUTO_INCREMENT,
   name VARCHAR(50) NOT NULL,
   PRIMARY KEY (id)
 );
 
-CREATE TABLE role (
+CREATE TABLE archtype (
   id INT NOT NULL AUTO_INCREMENT,
-  title VARCHAR(50) NOT NULL,
-  salary DECIMAL(10,2) NOT NULL,
-  department_id INT, 
+  class VARCHAR(50) NOT NULL,
+  gold DECIMAL(10,2) NOT NULL,
+  main_stat_id INT, 
   PRIMARY KEY (id)
 );
 
-CREATE TABLE employee (
+CREATE TABLE adventurer (
   id INT NOT NULL AUTO_INCREMENT,
   first_name VARCHAR (50) NOT NULL,
   last_name VARCHAR(50) NOT NULL,
-  role_id INT NOT NULL, 
+  archtype_id INT NOT NULL, 
   manager_id INT, 
   PRIMARY KEY (id)
 );
 
-INSERT INTO department (name)
-VALUES ("Admin"), (""), (""), (""), (""), ("");
+INSERT INTO main_stat (name)
+VALUES ("Strength"), ("Dexterity"), ("Consitituion"), ("Intelligence"), ("Wisdom"), ("Charisma");
 
-INSERT INTO role (title, salary, department_id)
+INSERT INTO archtype (class, gold, main_stat_id)
 VALUES ("Name", "Monies", "ID")
 
-INSERT INTO employee (first_name, last_name, role_id, manager_id)
-VALUES (first_name, last_name, role_id, manager_id)
+INSERT INTO adventurer (first_name, last_name, archtype_id, manager_id)
+VALUES (first_name, last_name, archtype_id, manager_id)
 
-SELECT e.id, e.first_name, e.last_name, d.name AS department, r.title, r.salary, CONCAT_WS(" ", m.first_name, m.last_name) AS manager FROM employee e LEFT JOIN employee m ON m.id = e.manager_id INNER JOIN role r ON e.role_id = r.id INNER JOIN department d ON r.department_id = d.id ORDER BY e.id ASC;
+SELECT e.id, e.first_name, e.last_name, d.name AS main_stat, r.class, r.gold, CONCAT_WS(" ", m.first_name, m.last_name) AS manager FROM adventurer e LEFT JOIN adventurer m ON m.id = e.manager_id INNER JOIN archtype r ON e.archtype_id = r.id INNER JOIN main_stat d ON r.main_stat_id = d.id ORDER BY e.id ASC;
 
-SELECT  r.id, r.title, r.salary, d.name as Department_Name FROM role AS r INNER JOIN department AS d ON r.department_id = d.id;
+SELECT  r.id, r.class, r.gold, d.name as main_stat_Name FROM archtype AS r INNER JOIN main_stat AS d ON r.main_stat_id = d.id;
 
-SELECT id, CONCAT_WS(' ', first_name, last_name) AS Employee_Name FROM employee
+SELECT id, CONCAT_WS(' ', first_name, last_name) AS adventurer_Name FROM adventurer
 --Update Query
-UPDATE employee SET role_id = 3 WHERE id = 8;
-UPDATE employee SET ? WHERE ?;
+UPDATE adventurer SET archtype_id = 3 WHERE id = 8;
+UPDATE adventurer SET ? WHERE ?;
 --Delete Query
-DELETE FROM department WHERE id = 13;
+DELETE FROM main_stat WHERE id = 13;
