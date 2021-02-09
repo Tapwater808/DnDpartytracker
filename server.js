@@ -18,7 +18,7 @@ var connection = mysql.createConnection({
     user: "root",
   
     // Your password
-    password: "P@ssw0rd",
+    password: "Silverado.08",
     database: "dungeonparty_db"
   });
 
