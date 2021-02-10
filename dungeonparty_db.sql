@@ -33,7 +33,7 @@ INSERT INTO archtype (class, gold, main_stat_id)
 VALUES ("Fighter", "5000", "1"), ("Rogue", "4000", "2"), ("Barbarian", "1200", "1"), ("Monk", "500", "2"), ("Ranger", "3000", "5"), ("Paladin", "6000", "3"), ("Wizard", "9000", "4"), ("Cleric", "2500", "5"),  ("Sorcerer", "2600", "6"), ("Druid", "7000", "5"), ("Bard", "8500", "6"), ("Warlock", "4600", "6");
 
 INSERT INTO adventurer (first_name, last_name, archtype_id, leader_id)
-VALUES ("Vander", "Princeton", "2"),  ("Drake", "Argetsaba", "8", "1"), ("Lukas", "Capriatti", "12", "1"), ("Reginald", "J Lightbringer", "6", "1"), ("Divina", "George", "7", "1"), ("Anastasia", "Chernyshevsky", "9", "1");
+VALUES ("Vander", "Princeton", "2"),  ("Drake", "Argetsaba", "8", "1"), ("Lukas", "Capriatti", "12", "1"), ("Reginald", "J Lightbringer", "6", "1"), ("Divina", "Deabru", "7", "1"), ("Anastasia", "Chernyshevsky", "9", "1");
 
 SELECT e.id, e.first_name, e.last_name, d.name AS main_stat, r.class, r.gold, CONCAT_WS(" ", m.first_name, m.last_name) AS manager FROM adventurer e LEFT JOIN adventurer m ON m.id = e.leader_id INNER JOIN archtype r ON e.archtype_id = r.id INNER JOIN main_stat d ON r.main_stat_id = d.id ORDER BY e.id ASC;
 

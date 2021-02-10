@@ -1,0 +1,28 @@
+{
+  "name": "DnDpartytracker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "console-table-printer": "^2.7.5",
+    "figlet": "^1.5.0",
+    "mysql": "^2.18.1",
+    "inquirer": "^7.3.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tapwater808/DnDpartytracker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tapwater808/DnDpartytracker/issues"
+  },
+  "homepage": "https://github.com/Tapwater808/DnDpartytracker#readme"
+}

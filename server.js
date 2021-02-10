@@ -7,17 +7,11 @@ let main_stat;
 let archtype;
 let leaders;
 let adventurer;
-
+//connections
 var connection = mysql.createConnection({
     host: "localhost",
-  
-    // Your port; if not 3306
     port: 3306,
-  
-    // Your username
     user: "root",
-  
-    // Your password
     password: "Password",
     database: "dungeonparty_db"
   });
