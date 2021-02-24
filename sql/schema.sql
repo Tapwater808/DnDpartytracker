@@ -8,7 +8,7 @@ CREATE TABLE mainstat (
 
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 
-    mainstat_name VARCHAR(30) UNIQUE NOT NULL
+    stat_name VARCHAR(30) UNIQUE NOT NULL
 );
 
 CREATE TABLE class (

@@ -3,22 +3,22 @@ USE party_db;
 
 -- department seeds
 
-INSERT INTO mainstat (mainstat_name)
+INSERT INTO mainstat (stat_name)
 VALUES ('STR');
 
-INSERT INTO mainstat (mainstat_name)
+INSERT INTO mainstat (stat_name)
 VALUES ('DEX');
 
-INSERT INTO mainstat (mainstat_name)
+INSERT INTO mainstat (stat_name)
 VALUES ('CON');
 
-INSERT INTO mainstat (mainstat_name)
+INSERT INTO mainstat (stat_name)
 VALUES ('INT');
 
-INSERT INTO mainstat (mainstat_name)
+INSERT INTO mainstat (stat_name)
 VALUES ('WIS');
 
-INSERT INTO mainstat (mainstat_name)
+INSERT INTO mainstat (stat_name)
 VALUES ('CHA');
 
 -- class seeds
@@ -79,27 +79,27 @@ VALUES ('Warlock', 200.00, 6);
 
 --Barbarian 1
 --Fighter 2
-INSERT INTO employees (first_name, last_name, class_id, manager_id)
+INSERT INTO adventurer (first_name, last_name, class_id, manager_id)
 VALUES ('Jimmy', 'Blaze', 1, NULL);
 --Rogue 3
 --Ranger 4
 --Sorcerer 5
-INSERT INTO employees (first_name, last_name, class_id, manager_id)
+INSERT INTO adventurer (first_name, last_name, class_id, manager_id)
 VALUES ('Amy', 'Arazana', 5, 1);
 --Paladin 6
-INSERT INTO employees (first_name, last_name, class_id, manager_id)
+INSERT INTO adventurer (first_name, last_name, class_id, manager_id)
 VALUES ('Reginald', 'Justice', 6, 2);
 --Wizard 7
 --Artificer 8
-INSERT INTO employees (first_name, last_name, class_id, manager_id)
+INSERT INTO adventurer (first_name, last_name, class_id, manager_id)
 VALUES ('Vander', 'Princeton', 8, NULL);
 
 --Cleric 9
 --Monk 10
-INSERT INTO employees (first_name, last_name, class_id, manager_id)
+INSERT INTO adventurer (first_name, last_name, class_id, manager_id)
 VALUES ('Jellybean', 'Chaos', 10, 2);
 --Druid 11
 --Bard 12
-INSERT INTO employees (first_name, last_name, class_id, manager_id)
+INSERT INTO adventurer (first_name, last_name, class_id, manager_id)
 VALUES ('Kili', 'MaunaWili', 12, 2);
 --Warlock 13

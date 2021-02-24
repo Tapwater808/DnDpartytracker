@@ -1,7 +1,6 @@
 const inquirer = require('inquirer');
 const figlet = require('figlet');
 const db = require('./db/methods.js');
-const pormpt = require('./db/prompts.js');
 const prompts = require('./db/prompts.js');
 
 figlet('DnD adveturing party creator', (err, result) => {
@@ -45,9 +44,9 @@ async function viewAdventurers() {
     youAllMeetInATavern();
   };
 // Add
-async function addDepartment() {
+async function addMainStat() {
     const addDep = await inquirer.prompt(prompt.addDept);
-    const res = await db.addDepartment(addDep.MainStat);
+    const res = await db.addMainStat(addDep.MainStat);
     console.log(`Added ${addDep.MainStat} to the the database.`);
     viewMainStat();
     console.log('======================================================');
