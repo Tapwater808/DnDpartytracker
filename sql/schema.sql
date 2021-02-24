@@ -24,7 +24,7 @@ CREATE TABLE class (
     CONSTRAINT fkey_dept FOREIGN KEY (mainstat_id) REFERENCES mainstat(id) ON DELETE CASCADE
 );
 
-CREATE TABLE adventurers (
+CREATE TABLE adventurer (
 
     id INT AUTO_INCREMENT PRIMARY KEY,
 
@@ -38,5 +38,5 @@ CREATE TABLE adventurers (
 
     manager_id INT,
 
-    CONSTRAINT fkey_manager FOREIGN KEY (manager_id) REFERENCES adventurers(id) ON DELETE SET NULL
+    CONSTRAINT fkey_manager FOREIGN KEY (manager_id) REFERENCES adventurer(id) ON DELETE SET NULL
 );
